@@ -1,4 +1,4 @@
-// Obtener elementos por ID
+/*/ Obtener elementos por ID
 const inputElement = document.getElementById("inputId");
 const fechaElement = document.getElementById("fechaId");
 const listaElement = document.getElementById("listaId");
@@ -137,3 +137,20 @@ function editarTarea(tarea, fecha) {
 
 // Cargar la lista al cargar la página
 cargarLista();
+*/
+//Menu Barra de tareas
+let botones_barra = document.querySelectorAll(".boton_barra");
+botones_barra.forEach((boton, index) => {
+  boton.addEventListener("click", () => {
+    botones_barra.forEach((boton, boton_index) => {
+      if(index == boton_index){
+        boton.querySelector('.menu_cerrado').classList.toggle("abierto")
+      }
+      else{
+        boton.querySelector('.menu_cerrado').classList.remove("abierto")
+      }
+    })
+  })
+  console.log(boton.innerHTML)
+});
+

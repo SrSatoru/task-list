@@ -11,15 +11,52 @@
         <div id="titulo">
             <p id="titulo_text">Lista de tareas</p>
         </div>
+        <div id="barra_superior">
+            <ul id="barra_tareas">
+                <li id="barra_tarea" class="boton_barra">
+                    <a href="#">Tareas</a>
+                    <ul class="menu_cerrado">
+                        <li>Nueva tarea</li>
+                    </ul>
+                </li>
+                <li id="barra_opciones" class="boton_barra">
+                    <a href="#">Opciones</a>
+                    <ul class="menu_cerrado">
+                        <li>
+                            <p>Ordenar por:</p>
+                            <ul class="menu_cerrado">
+                                <li>Nombre</li>
+                                <li>Fecha</li>
+                            </ul>
+                        </li>
+                        <li>Limpiar completados</li>
+                    </ul>
+                </li>
+                <li id="barra_vista" class="boton_barra">
+                    <a href="#">Vista</a>
+                    <ul class="menu_cerrado">
+                        <li>Completados</li>
+                        <li>Modo nocturno</li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
         <div id="windows">
-        <label for="Tarea" id="tarea_label">
+        <!--<label for="Tarea" id="tarea_label">
             <input type="text" name="Tarea" id="inputId" placeholder="Ingresar tarea nueva...">
             <input type="datetime-local" name="Tarea" id="fechaId">
             <button type="button" id="agregarBotonId">Agregar</button>
-        </label>
+        </label>-->
         <ul id="listaId">
+            <li>
+                <input type="checkbox" name="" id="">
+                <p>Juan Topo</p>
+                <p>23:30 27/03</p>
+            </li>
         </ul>
         </div>
+        
     </div>
     
     <script src="script.js"></script>

@@ -3,18 +3,23 @@
 }
 *{
     margin: 0;
+    box-sizing: border-box;
 }
 html{
     height: 100%;
 }
 body{
-    font-family: Arial, sans-serif;
+    font-family: "MS Sans-serif", sans-serif, Georgia, Whatever;
     background-color: #008080;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
 }
 #contenedor{
     width: 400px;
@@ -37,25 +42,8 @@ body{
     user-select: none;
     box-shadow: 1px 1px 0 #000;
   }
-button{
-    padding: 5px;
-    background-color: #C0C0C0;
-    border-top: 1px solid #FFFFFF;
-    border-left: 1px solid #FFFFFF;
-    border-bottom: 1px solid #404040;
-    border-right: 1px solid #404040;
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 1px 1px 0 #000;
-}
-button:hover{
-    background-color: #E0E0E0;
-}
-#agregarBotonId{
-    width: 60px;
-}
 #titulo{
-    width: 97%;
+    width: 100%;
     background-color: #4D90FE;
     background-image: linear-gradient(to left, #2a74eb, #083389);
     color: #FFFFFF;
@@ -80,6 +68,25 @@ button:hover{
     flex-direction: row;
     align-items: center;
 }
+/*
+button{
+    padding: 5px;
+    background-color: #C0C0C0;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #404040;
+    border-right: 1px solid #404040;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 1px 1px 0 #000;
+}
+button:hover{
+    background-color: #E0E0E0;
+}
+#agregarBotonId{
+    width: 60px;
+}*/
+/*
 #inputId{
     width: 100%;
 }
@@ -89,11 +96,47 @@ li button{
 li p{
     flex: 5;
     overflow: hidden;
-}
+}*/
 #windows{
     overflow: hidden;
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
+}
+/*Barra Superior*/
+#barra_superior{
+    width: 100%;
+}
+#barra_tareas{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+#barra_tareas > li > a{
+    display: block;
+    padding: 6px;
+}
+#barra_tareas > li > a:hover{
+    color: white;
+    background-color: #083389;
+}
+.menu_cerrado{
+    background-color: #C0C0C0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    position: absolute;
+    width: 200px;
+}
+.menu_cerrado > li{
+    display: block;
+    padding: 6px;
+}
+.menu_cerrado > li:hover{
+    color: white;
+    background-color: #083389;
+}
+.abierto{
+    display: block;
 }
