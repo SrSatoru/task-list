@@ -1,4 +1,4 @@
-/*/ Obtener elementos por ID
+/*/Obtener elementos por ID
 const inputElement = document.getElementById("inputId");
 const fechaElement = document.getElementById("fechaId");
 const listaElement = document.getElementById("listaId");
@@ -136,8 +136,9 @@ function editarTarea(tarea, fecha) {
 }
 
 // Cargar la lista al cargar la página
-cargarLista();
+
 */
+
 //Menu Barra de tareas
 let botones_barra = document.querySelectorAll(".boton_barra");
 botones_barra.forEach((boton, index) => {
@@ -154,3 +155,62 @@ botones_barra.forEach((boton, index) => {
   console.log(boton.innerHTML)
 });
 
+
+//Mostrar ventana nueva tarea
+let nueva_tarea_option = document.getElementById("nueva_tarea_option");
+let button_cerrar_tarea = document.getElementById("boton_cerrar");
+let ventana_nueva_tarea = document.getElementById("nueva_tarea");
+nueva_tarea_option.addEventListener("click", () =>{
+  
+  ventana_nueva_tarea.style.display = "block";
+})
+button_cerrar_tarea.addEventListener("click", () => {
+  ventana_nueva_tarea.style.display = "none";
+})
+
+//Ventana Nueva tarea
+const boton_agregar_tarea = document.getElementById("boton_agregar_tarea");
+const inputElement = document.getElementById("inputId");
+const fechaElement = document.getElementById("fechaId");
+
+boton_agregar_tarea.addEventListener("click", () => {
+  const valorInput = inputElement.value;
+  const valorFecha = fechaElement.value;
+  boton_agregar_tarea.textContent = "Agregar";
+  
+  if (valorInput !== "") {
+    agregarTareaATabla(valorInput, valorFecha, false);
+    inputElement.value = "";
+  }
+});
+
+function agregarTareaATabla(input, fecha, tachado){
+  let tabla = document.getElementById("tabla_tareas")
+  let fila = document.createElement("tr");
+
+  //check data
+  let checkData = document.createElement("input");
+  checkData.type = "checkbox";
+  checkData.checked = tachado;
+  fila.appendChild(checkData);
+
+  let inputData = document.createElement("td");
+  inputData.textContent = input;
+  fila.appendChild(inputData);
+
+  let fechaValue = new Date(fecha);
+  let mes = fechaValue.getMonth() + 1;
+  let dia = fechaValue.getDate();
+  let hora = fechaValue.getHours();
+  let min = fechaValue.getMinutes();
+
+  let horaData = document.createElement("td");
+  horaData.textContent = `${hora}:${min}`
+  fila.appendChild(horaData);
+
+  let fechaData = document.createElement("td");
+  fechaData.textContent = `${dia}/${mes}`
+  fila.appendChild(fechaData);
+
+  tabla.appendChild(fila);
+}

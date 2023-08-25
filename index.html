@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="contenedor" class="caja">
-        <div id="titulo">
+        <div class="titulo">
             <p id="titulo_text">Lista de tareas</p>
         </div>
         <div id="barra_superior">
@@ -16,7 +16,7 @@
                 <li id="barra_tarea" class="boton_barra">
                     <a href="#">Tareas</a>
                     <ul class="menu_cerrado">
-                        <li>Nueva tarea</li>
+                        <li id="nueva_tarea_option">Nueva tarea</li>
                     </ul>
                 </li>
                 <li id="barra_opciones" class="boton_barra">
@@ -48,15 +48,43 @@
             <input type="datetime-local" name="Tarea" id="fechaId">
             <button type="button" id="agregarBotonId">Agregar</button>
         </label>-->
-        <ul id="listaId">
+        <table id="tabla_tareas">
+            <thead>
+                <tr>
+                    <th style="width: 5%;"></th>
+                    <th style="width: 75%;">Tarea</th>
+                    <th style="width: 10%;">Hora</th>
+                    <th style="width: 10%;">Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="tabla_body">
+                <tr>
+                    <td><input type="checkbox" value="true"></td>
+                    <td>Tarea</td>
+                    <td>20:30</td>
+                    <td>03/12</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--<ul id="listaId">
             <li>
                 <input type="checkbox" name="" id="">
                 <p>Juan Topo</p>
                 <p>23:30 27/03</p>
             </li>
-        </ul>
+        </ul>-->
         </div>
-        
+    </div>
+    <div id="nueva_tarea" class="caja">
+        <div class="titulo" id="titulo_nueva_tarea">
+            <p>Nueva tarea</p>
+            <button id="boton_cerrar" class="caja">x</button>
+        </div>
+        <label for="Tarea" id="tarea_label">
+            <textarea id="inputId" rows="10" cols="50" placeholder="Ingresar tarea nueva..."></textarea>
+            <input type="datetime-local" name="Tarea" id="fechaId">
+            <button type="button" class="caja" id="boton_agregar_tarea">Agregar</button>
+        </label>
     </div>
     
     <script src="script.js"></script>
